@@ -20,3 +20,7 @@ Pick a word, and try to see how many recombinations of that word you can think o
 2. npm install # currently all files are committed
 3. Start a webserver from the primary directory
 4. Visit the webserver in the browser.
+
+# Thanks
+
+Built for my Grandmother
