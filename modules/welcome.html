@@ -3,7 +3,7 @@
 <h3>Enter a word to start the round:</h3>
 <form ng-submit="go('round', { word: word.toLowerCase() })" class="row">
   <div class="col-sm-10">
-    <input ng-model="word" type="text" class="form-control" required>
+    <input placeholder="Source word (like monosyllabic)" ng-model="word" type="text" class="form-control" required>
   </div>
   <div class="col-sm-2">
     <button class="btn btn-primary btn-block">
@@ -11,3 +11,17 @@
     </button>
   </div>
 </form>
+
+
+<h3>How to Play:</h3>
+<ol>
+  <li>
+    Come up with a (preferably large) word to start the round
+  </li>
+  <li>
+    Try to come up with as many words you can think of that are made up of letters from the source word
+  </li>
+  <li>
+    Duplicates and words that do not use letters from the source word are not allowed
+  </li>
+</ol>

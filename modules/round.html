@@ -5,10 +5,12 @@
       Word: {{::word}}
       <small><a ui-sref="welcome"><i class="glyphicon glyphicon-pencil"></i></a></small>
     </h1>
-
+    <p>
+      The variation list is filtered as you type in the next word to show nearest matches. The form will turn <span class="text-danger">RED</span> if the word is invalid.
+    </p>
     <form ng-submit="add(newWord)" ng-class="{'has-error':!isVariation(newWord)}" class="row">
       <div class="col-sm-10">
-        <input required type="text" ng-model="newWord" placeholder="New Variation"  class="form-control">
+        <input placeholder="Variation word" required type="text" ng-model="newWord" class="form-control">
       </div>
       <div class="col-sm-2">
         <button ng-disabled="!isVariation(newWord)||!newWord"

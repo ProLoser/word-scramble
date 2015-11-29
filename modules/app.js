@@ -34,6 +34,10 @@ angular.module('app', [
 .controller('Round', function($scope, $stateParams) {
   $scope.word = $stateParams.word;
   $scope.variations = [];
+
+  /**
+   * Adds the newWord input to the list if it passes the check
+   */
   $scope.add = function() {
     var word = $scope.newWord.trim();
     if ($scope.isVariation($scope.word, word)
@@ -44,11 +48,23 @@ angular.module('app', [
     $scope.newWord = '';
   };
 
+  /**
+   * Determines if the input is a variation of the round word
+   * @param  {string} variation Input to check
+   * @return {boolean}          Is the input a variation of letters
+   */
   $scope.isVariation = function(variation) {
     variation = variation || '';
     variation = variation.toLowerCase();
+    var word = $scope.word.split('');
     var valid = variation.split('').every(function(varLetter){
-      return !!~$scope.word.indexOf(varLetter);
+      var index = word.indexOf(varLetter);
+      if (~index) {
+        word.splice(index, 1);
+        return true;
+      } else {
+        return false;
+      }
     });
     return valid;
   };
